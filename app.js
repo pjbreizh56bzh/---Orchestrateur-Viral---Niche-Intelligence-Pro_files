@@ -102,6 +102,11 @@ function showResults() {
     <div class="cta">
       <p>Envie d'un rapport complet et personnalisé (10 idées détaillées + plan d'action 90 jours) rédigé sur mesure pour votre profil ?</p>
       <a class="btn" href="${buildMailto(top3)}">Commander le rapport complet (19€) →</a>
+      <p class="email-fallback">
+        Le bouton n'ouvre rien ? Écrivez à
+        <code id="cta-email">pjbreizh56bzh@gmail.com</code>
+        <button class="secondary" id="copy-cta-email" type="button">Copier l'e-mail</button>
+      </p>
     </div>
     <div class="actions">
       <button class="secondary" id="restart">Refaire le quiz</button>
@@ -125,6 +130,16 @@ function showResults() {
       setTimeout(() => (e.target.textContent = "Copier le lien à partager"), 2000);
     } catch (err) {
       e.target.textContent = "Copiez l'URL depuis la barre d'adresse";
+    }
+  });
+
+  document.getElementById("copy-cta-email").addEventListener("click", async (e) => {
+    try {
+      await navigator.clipboard.writeText("pjbreizh56bzh@gmail.com");
+      e.target.textContent = "E-mail copié !";
+      setTimeout(() => (e.target.textContent = "Copier l'e-mail"), 2000);
+    } catch (err) {
+      e.target.textContent = "Sélectionnez le texte ci-dessus";
     }
   });
 }
