@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Générateur d'Idées Business IA — BZHandiBreizh</title>
+<meta name="description" content="Répondez à 4 questions, recevez 3 idées d'entreprise adaptées à votre budget, votre temps et vos compétences." />
+<style>
+  :root {
+    --bg: #0f1416; --surface: #171e21; --line: #2a3338;
+    --text: #e9eef0; --muted: #9aa7ac; --accent: #4fd1c5; --accent-ink: #06201d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 40px 20px 80px; }
+  header { text-align: center; margin-bottom: 32px; }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 { font-size: 1.7rem; margin: 10px 0 12px; }
+  .lede { color: var(--muted); font-size: 1rem; max-width: 46ch; margin: 0 auto; }
+
+  .progress { display: flex; gap: 6px; margin: 24px 0; }
+  .progress span { flex: 1; height: 4px; background: var(--line); border-radius: 2px; }
+  .progress span.done { background: var(--accent); }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+  .card h2 { font-size: 1.15rem; margin: 0 0 18px; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .options button {
+    background: var(--bg); color: var(--text); border: 1px solid var(--line);
+    border-radius: 8px; padding: 12px 16px; text-align: left; font-size: .95rem;
+    cursor: pointer; transition: border-color .15s;
+  }
+  .options button:hover { border-color: var(--accent); }
+
+  .idea { border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  .idea h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--accent); }
+  .idea p.pitch { margin: 0 0 12px; }
+  .idea ol { margin: 0 0 10px; padding-left: 20px; font-size: .9rem; color: var(--muted); }
+  .idea .potentiel { font-size: .85rem; color: var(--muted); font-style: italic; }
+
+  .cta {
+    text-align: center; margin-top: 28px; padding: 22px; border-radius: 12px;
+    background: var(--surface); border: 1px solid var(--line);
+  }
+  .cta p { color: var(--muted); font-size: .92rem; margin: 0 0 14px; }
+  a.btn {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    text-decoration: none; font-weight: 700; padding: 12px 26px; border-radius: 8px;
+  }
+  .actions { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+  button.secondary {
+    background: transparent; color: var(--accent); border: 1px solid var(--accent);
+    border-radius: 8px; padding: 10px 18px; cursor: pointer; font-size: .9rem;
+  }
+  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: .85rem; }
+  footer a { color: var(--accent); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">BZHandiBreizh</div>
+      <h1>Générateur d'Idées Business IA</h1>
+      <p class="lede">4 questions rapides pour recevoir 3 idées d'entreprise réalistes, adaptées à votre budget, votre temps disponible et vos compétences.</p>
+    </header>
+
+    <div class="progress" id="progress"></div>
+
+    <div class="card" id="quiz"></div>
+
+    <div id="results" hidden></div>
+
+    <footer>
+      Un projet <a href="https://pjbreizh56bzh.github.io/ia-viral-site/">BZHandiBreizh</a> ·
+      <a href="mailto:pjbreizh56bzh@gmail.com">Contact</a>
+    </footer>
+  </div>
+
+  <script src="ideas.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
